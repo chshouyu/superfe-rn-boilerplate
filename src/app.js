@@ -1,11 +1,11 @@
 /**
-  * Copyright (C) 2016 yanni4night.com
+  * Copyright (C) 2016 baidu.com
   * app.js
   *
   * changelog
   * 2016-11-14[13:37:53]:revised
   *
-  * @author yanni4night@gmail.com
+  * @author xxx@baidu.com
   * @version 1.0.0
   * @since 1.0.0
   * @file
