@@ -11,11 +11,14 @@
   * @file
   */
 import React, {Component} from 'react';
+import {observer} from 'mobx-react/native';
+import {observable, action} from 'mobx';
 import {
     StyleSheet,
     Text,
     Image,
-    View
+    View,
+    TouchableWithoutFeedback
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -41,7 +44,15 @@ const styles = StyleSheet.create({
     }
 });
 
-export default class App extends Component {
+class Store {
+    @observable clicked = 0;
+    @action onClicked() {
+        this.clicked += 1;
+    }
+}
+
+@observer
+class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -56,19 +67,33 @@ export default class App extends Component {
             });
         }, 1e3);
     }
+    onClicked() {
+        this.props.store.onClicked();
+    }
     render() {
         return (
-            <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to Cubefe React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit src
-        </Text>
-        <Image style={styles.logo} source={require('../assets/logo.png')}></Image>
-        <Text style={styles.instructions}>
-          Since started: {this.state.count}s
-        </Text>
-      </View>);
+        <View style={styles.container}>
+            <Text style={styles.welcome}>
+                Welcome to Super-FE React Native!
+            </Text>
+            <TouchableWithoutFeedback onPress={this.onClicked.bind(this)}>
+                <View>
+                    <Text style={styles.instructions}>
+                       {this.props.store.clicked} clicks
+                    </Text>
+                </View>
+            </TouchableWithoutFeedback>
+            <Image style={styles.logo} source={require('../assets/logo.png')}></Image>
+            <Text style={styles.instructions}>
+                Since started: {this.state.count}s
+            </Text>
+        </View>);
+    }
+}
+
+export default class App extends Component {
+    store = new Store();
+    render() {
+        return (<Index store={this.store}/>);
     }
 }

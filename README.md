@@ -12,7 +12,7 @@ React-Native(RN for short) boilerplate app of the *super-fe* team.
  - [x] async/await
  - [x] .editorconfig
  - [x] independent eslint config
- - [ ] decorators
+ - [x] decorators(by [mobx](https://mobxjs.github.io/mobx/))
  - [ ] specification inspector(node, npm, etc.)
  - [x] CHANGELOG
 
