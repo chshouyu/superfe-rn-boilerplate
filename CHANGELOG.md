@@ -8,4 +8,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - initialize this project
 
-[Unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/super-fe/superfe-rn-boilerplate/compare/1.0.0...HEAD
