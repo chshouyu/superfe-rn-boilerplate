@@ -1,0 +1,53 @@
+{
+  "name": "superfe-rn-boilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start:ios": "./node_modules/.bin/react-native run-ios",
+    "start:android": "./node_modules/.bin/react-native run-android",
+    "test": "jest --forceExit",
+    "lint": "fecs index.*.js src --rule",
+    "bundle:ios": "sh bundle.sh ios",
+    "bundle:android": "sh bundle.sh android",
+    "bundle": "npm run bundle:ios && npm run bundle:android",
+    "clean": "rm -rf bundle",
+    "pre-commit": "npm run lint && npm test && npm run bundle && npm run clean"
+  },
+  "pre-commit": "pre-commit",
+  "jest": {
+    "preset": "jest-react-native"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/super-fe/superfe-rn-boilerplate.git"
+  },
+  "engines": {
+    "node": ">=6.9.0 <7.0.0",
+    "npm": "<4.0.0 >=3.10.0"
+  },
+  "dependencies": {
+    "react": "~15.3.2",
+    "react-native": "0.35.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^17.0.0",
+    "babel-preset-react-native": "^1.9.0",
+    "eslint": "^3.10.0",
+    "eslint-config-superfe-rn": "^1.0.0",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-promise": "^3.3.2",
+    "eslint-plugin-react": "^6.6.0",
+    "eslint-plugin-react-native": "^2.0.0",
+    "fecs": "^1.1.0",
+    "jest": "^17.0.0",
+    "jest-react-native": "~16.0.0",
+    "pre-commit": "^1.1.3",
+    "react-test-renderer": "^15.3.2"
+  },
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/super-fe/superfe-rn-boilerplate/issues"
+  },
+  "homepage": "https://github.com/super-fe/superfe-rn-boilerplate#readme"
+}
