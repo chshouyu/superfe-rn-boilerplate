@@ -2,7 +2,6 @@
   "eslint":{
     "extends": ["superfe-rn"],
     "rules": {
-        "semi": 2,
         "fecs-no-require": 1
     }
   }
